@@ -1,4 +1,5 @@
-# **Small!** A blog-site like Medium, except its just a little *smaller*
+# **Welcome to Small!** 
+# A blog-site like Medium, except its just a little *smaller*
 ## complete CRUD application inspired by the popular medium.com
 ©ACA-Capstone
 
