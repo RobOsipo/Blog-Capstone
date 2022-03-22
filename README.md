@@ -4,7 +4,7 @@
 ©ACA-Capstone
 
 ### Where is The data to create the tables?
-* located in the userCredentialsSeedData.sql and blogInfoSeedData.sql files are the data needed to create the tables in mySQL workbench
+* located in SQL-seed-dat folder, the userCredentialsSeedData.sql and blogInfoSeedData.sql files are the data needed to create the tables in mySQL workbench
 * If you need to create a database inside your mySql workbench uncomment line 3 & 4 in the userCredentialsSeedData.sql file
 * *The data creates the necessary tables and seeds it with only a few sets of dummy data to start*
 
