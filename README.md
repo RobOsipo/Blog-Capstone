@@ -16,10 +16,10 @@
 **Here are the current minimum tables needed for our blog displayed in an ERD**
 
 -As you can see below we have a table called login_credentials that contains the user_email to register a user by their email,
--user_password which will conatin a hash encrypted version of the users password, and lastly an AUTO_INCREMENTing id added to each user as a PRIMARY_KEY
+user_password which will conatin a hash encrypted version of the users password, and lastly an AUTO_INCREMENTing user_id added to each user as a PRIMARY_KEY
 
 -Inside of the blog_info table we have the blog post_title, the blog post_body, the time the post was created_at, and once again another 
--AUTOINCREMENTing id to give unique identifier to each post
+AUTOINCREMENTing id called post_id to give unique identifier to each post
 
 
 ![Screenshot (20)](https://user-images.githubusercontent.com/90695804/159587222-a76fe0b9-c7f2-468a-97cb-2d861bf2f1b4.png)
