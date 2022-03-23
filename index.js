@@ -8,12 +8,48 @@ const checkJwt = require('./checkJWT.js')
 
 app.use(express.json());
 
+// * Get Route for home page before signup
+// * Here I can maybe show the user a large welcome page
+// * with options to sign up and sign in
+// TODO: LOGIC INSIDE ALL ROUTES EXCEPT AUTH AT THE BOTTOM
 
 app.get('/', (req, res) => {
-    res.send('welcome to Small the blog');
+    res.send('Welcome to Small -- Think big, blog Small');
+})
+
+// * This is the get route to my signup page
+app.get('/signup', (req, res) => {
+    res.send('this is login page')
 })
 
 
+// * This is the get route to my login page
+app.get('/login', (req, res) => {
+    res.send('this is login page')
+})
+
+
+// * Get route to compose a new blog post
+
+app.get('/compose', (req, res) => {
+    res.send('compose your msg on this page')
+})
+
+// * Get route for all blog posts
+
+app.get('/posts', (req, res) => {
+    res.send('get a list of all of your blogs here')
+})
+
+// * Get a blog post by its id
+
+app.get('posts/:id', (req, res) => {
+    res.send('get a blog by its id')
+})
+
+
+
+// ! Authentication needed to access the blog page and beyond
 
 app.get('/blog', checkJwt, (req, res) => {
     console.log('inside the blog home page after sign in');
