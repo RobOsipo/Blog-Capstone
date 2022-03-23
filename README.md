@@ -4,7 +4,7 @@
 ©ACA-Capstone
 
 ### Where is The data to create the tables?
-* located in SQL-seed-dat folder, the userCredentialsSeedData.sql and blogInfoSeedData.sql files are the data needed to create the tables in mySQL workbench
+* located in SQL-seed-data folder, the userCredentialsSeedData.sql and blogInfoSeedData.sql files are the data needed to create the tables in mySQL workbench
 * If you need to create a database inside your mySql workbench uncomment line 3 & 4 in the userCredentialsSeedData.sql file
 * *The data creates the necessary tables and seeds it with only a few sets of dummy data to start*
 
@@ -14,8 +14,12 @@
 * A blog info table in your database for storing the necessary post information
 
 **Here are the current minimum tables needed for our blog displayed in an ERD**
-  As you can see below we have a table called login_credentials that contains the user_email to register a user by their email,
-a a user_password which will conatin a hash encrypted version of the users password, and lastly an AUTO_INCREMENTing id added to each user as a PRIMARY_KEY
+
+-As you can see below we have a table called login_credentials that contains the user_email to register a user by their email,
+-user_password which will conatin a hash encrypted version of the users password, and lastly an AUTO_INCREMENTing id added to each user as a PRIMARY_KEY
+
+-Inside of the blog_info table we have the blog post_title, the blog post_body, the time the post was created_at, and once again another 
+-AUTOINCREMENTing id to give unique identifier to each post
 
 
 ![Screenshot (20)](https://user-images.githubusercontent.com/90695804/159587222-a76fe0b9-c7f2-468a-97cb-2d861bf2f1b4.png)
