@@ -8,61 +8,17 @@ const checkJwt = require('./checkJWT.js')
 
 app.use(express.json());
 
-// * Get Route for home page before signup
-// * Here I can maybe show the user a large welcome page
-// * with options to sign up and sign in
-// TODO: LOGIC INSIDE ALL ROUTES EXCEPT AUTH AT THE BOTTOM
+// * GET/POST Routes for home page and signup / Authorization
+// TODO: CLEAN THIS PAGE UP, BREAK INTO CONTROLLERS
 
 app.get('/', (req, res) => {
     res.send('Welcome to Small -- Think big, blog Small');
 })
 
-// * This is the get route to my signup page
+
+
 app.get('/signup', (req, res) => {
-    res.send('this is login page')
-})
-
-
-// * This is the get route to my login page
-app.get('/login', (req, res) => {
-    res.send('this is login page')
-})
-
-
-// * Get route to compose a new blog post
-
-app.get('/compose', (req, res) => {
-    res.send('compose your msg on this page')
-})
-
-// * Get route for all blog posts
-
-app.get('/posts', (req, res) => {
-    res.send('get a list of all of your blogs here')
-})
-
-// * Get a blog post by its id
-
-app.get('posts/:id', (req, res) => {
-    res.send('get a blog by its id')
-})
-
-
-
-// ! Authentication needed to access the blog page and beyond
-
-app.get('/blog', checkJwt, (req, res) => {
-    console.log('inside the blog home page after sign in');
-
-    const sql = 'SELECT * FROM blog_info'
-    connection.query(sql, (err, rows) => {
-        if (err) {
-            console.log(err)
-            res.status(404).send('A problem occured' + err.sqlMessage)
-        } else {
-            res.json(rows)
-        }
-    })
+    res.send('please register with email & password here')
 })
 
 app.post('/signup', async (req, res) => {
@@ -81,6 +37,12 @@ app.post('/signup', async (req, res) => {
         }
     })
 }) 
+
+
+
+app.get('/login', (req, res) => {
+    res.send('Please log in using your registered credentials')
+})
 
 app.post('/login', (req, res) => {
     const {email, password } = req.body
@@ -112,6 +74,61 @@ app.post('/login', (req, res) => {
         
     })
 })
+
+
+
+
+// ! Authorization Required for all other GET routes below
+
+app.get('/blog', checkJwt, (req, res) => {
+    console.log('inside the blog home page after sign in');
+
+    const sql = 'SELECT * FROM blog_info'
+    connection.query(sql, (err, rows) => {
+        if (err) {
+            console.log(err)
+            res.status(404).send('A problem occured' + err.sqlMessage)
+        } else {
+            res.json(rows)
+        }
+    })
+})
+
+
+
+
+app.get('/posts', checkJwt, (req, res) => {
+    const sql = 'SELECT * FROM post_title'
+    connection.query(sql, (err, rows) => {
+        if (err) {
+            console.log(err)
+            res.status(404).send('A problem occured' + err.sqlMessage)
+        } else {
+            res.json(rows)
+        }
+    })
+})
+
+
+
+app.get('posts/:id', checkJwt, (req, res) => {
+    const sql = 'SELECT * FROM blog_info WHERE post_id = ?'
+    connection.query(sql, [req.params.id], (err, rows) => {
+        if (err) {
+            console.log(err)
+            res.status(404).send('A problem occured' + err.sqlMessage)
+        } else {
+            res.json(rows)
+        }
+    })
+})
+
+
+
+
+
+
+
 
 
 
