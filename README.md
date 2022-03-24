@@ -65,6 +65,28 @@ to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to 
 ## You Can now load the Schemas into your mySQL Workbench from the SQLSeedData Folder in the project above
 ## If you are having issues you can copy and past the below SQL command into mySQL workbench
 
+### ****User Authentication table***
+
+
+CREATE TABLE login_credentials (
+    user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    user_email VARCHAR(50) NULL UNIQUE,
+    user_password VARCHAR(255) NULL UNIQUE 
+    );
+    
+
+
+INSERT INTO login_credentials
+	(user_email, user_password)
+ VALUES 
+  ('James@gmail.com','Budafdssd'),
+   ('Josephine@gmail.com','D755MARCH'),
+   ('Jakedasnake@gmail.com','boozetrain'),
+   ('letsgetcrackin@gmail.com','123456');
+   
+   
+### ***Blog_info table***
+
 
 
 
