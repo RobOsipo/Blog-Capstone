@@ -15,7 +15,7 @@
 * A blog info table in your database for storing the necessary post information
 * *Install all Dependencies*
 
-#### **Here are the current minimum tables needed for our blog displayed in an ERD**
+### **Here are the current minimum tables needed for our blog displayed in an ERD**
 
 -As you can see below we have a table called ***login_credentials*** that contains the ***user_email*** column to register a user by their email,
 ***user_password*** which will conatin a hash encrypted version of the users password, and lastly an ***AUTO_INCREMENTing user_id*** added 
