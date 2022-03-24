@@ -34,7 +34,7 @@ to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to 
 1.  Before anything else you need to create an account on *AWS* and *mySQL* workbench if you dont already have one! 
     1. Find mySQL workbench download here - https://dev.mysql.com/downloads/workbench/ .
     2. Create account on AWS here, large orange button top right - https://aws.amazon.com/premiumsupport/knowledge-center/what-is-free-tier/ .
-2. Once inside your *AWS* account search for *RDS*, then find click on the Databases tab in the left hand navigation bar.
+2. Once inside your *AWS* account search for *RDS*, click on the Databases tab in the left hand navigation bar.
 3. Click on the large orange button *CREATE DATABASE*.
 4. Click the *Standard Create* as a database creation method.
 5. Under *Engine Options* You will want to select *mySQL*.
