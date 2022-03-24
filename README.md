@@ -66,7 +66,7 @@ to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to 
 ## You Can now load the Schemas into your mySQL Workbench from the SQLSeedData Folder in the project above
 ## If you are having issues you can copy and past the below SQL command into mySQL workbench
 
-### ****User Authentication table***
+### ***User Authentication table***
 
 
 CREATE TABLE login_credentials (
