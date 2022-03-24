@@ -17,7 +17,7 @@
 
 #### **Here are the current minimum tables needed for our blog displayed in an ERD**
 
--As you can see below we have a table called ***login_credentials*** that contains the ***user_email** column to register a user by their email,
+-As you can see below we have a table called ***login_credentials*** that contains the ***user_email*** column to register a user by their email,
 ***user_password*** which will conatin a hash encrypted version of the users password, and lastly an ***AUTO_INCREMENTing user_id*** added 
 to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to be able to authenticatte & authorize users*
 
