@@ -22,7 +22,7 @@
 to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to be able to authenticatte & authorize users*
 
 -Inside of the ***blog_info*** table we have the blogs ***post_title*** column, the blogs ***post_body***, the time the post was ***created_at***, and once again another 
-***AUTOINCREMENTing*** id called ***post_id*** to give unique identifier to each post a ***PRIMARY_KEY***.
+***AUTOINCREMENTing*** id called ***post_id*** to give unique identifier to each post as a ***PRIMARY_KEY***.
 
 
 ![Screenshot (20)](https://user-images.githubusercontent.com/90695804/159587222-a76fe0b9-c7f2-468a-97cb-2d861bf2f1b4.png)
