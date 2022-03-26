@@ -1,7 +1,7 @@
 const connection = require('../connection.js');
 const argon2 = require('argon2');
 const jwt = require('jsonwebtoken');
-// const checkJwt = require('./checkJWT.js')
+
 
 
 const signup = async (req, res) => {
