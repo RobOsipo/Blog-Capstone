@@ -23,7 +23,7 @@ to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to 
 
 -Inside of the ***blog_info*** table we have the blogs ***post_title*** column, the blogs ***post_body***, the time the post was ***created_at***, and once again another ***AUTOINCREMENTing*** id called ***post_id*** to give unique identifier to each post as a ***PRIMARY_KEY***.
 
--We also have the foreign key of ***user_id*** on our ***login_credentials*** table that has a relationship with the ***user_id*** on the ***blog_info*** table
+-We also have the ***FOREIGN_KEY*** of ***user_id*** on our ***login_credentials*** table that has a relationship with the ***user_id*** on the ***blog_info*** table
 which allows us to differentiate posts between users and allows us to be able to compose a blog post unique to the user who is currently signed in.
 
 
