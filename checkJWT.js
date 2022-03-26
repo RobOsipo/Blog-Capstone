@@ -11,6 +11,7 @@ const checkJwt = (req, res, next) => {
             if (err) {return res.status(401).send('you are not authorized')}
             else {
                 console.log(decoded)
+                req.user_id = decoded.id
                 next()
             }
         })

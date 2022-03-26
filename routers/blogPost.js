@@ -12,6 +12,8 @@ router.get('/posts', checkJwt, BlogController.getAllPostTitle)
 
 router.get('/posts/:id', checkJwt, BlogController.getBlogByPostId)
 
+router.post('/blog', checkJwt, BlogController.composeBlogPost)
+
 
 module.exports = router;
 
