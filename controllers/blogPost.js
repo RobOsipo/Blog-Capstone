@@ -61,4 +61,18 @@ const getBlogByPostId = (req, res) => {
 }
 
 
-module.exports = { getAllBlogs, getAllPostTitle, getBlogByPostId, composeBlogPost  }
+const deleteBlogPostById = (req, res) => {
+    const sql = 'DELETE FROM blog_info WHERE post_id = ?'
+
+    connection.query(sql, [req.params.id], (err, rows) => {
+        if (err) {
+            console.log(err)
+            res.status(404).send('A problem occured' + err.sqlMessage)
+        } else {
+            res.json(rows)
+        }
+    })
+}
+
+
+module.exports = { getAllBlogs, getAllPostTitle, getBlogByPostId, composeBlogPost, deleteBlogPostById  }

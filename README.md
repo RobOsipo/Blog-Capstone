@@ -67,52 +67,52 @@ which allows us to differentiate posts between users and allows us to be able to
 
 
 ## You Can now load the Schemas into your mySQL Workbench from the SQLSeedData Folder in the project above
-## If you are having issues you can copy and past the below SQL command into mySQL workbench
+## If you are having issues you can copy and paste the below SQL commands into mySQL workbench
 
 ### ***User Authentication table***
 
 
-CREATE TABLE login_credentials (
-    user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    user_email VARCHAR(50) NULL UNIQUE,
-    user_password VARCHAR(255) NULL UNIQUE 
-    );
-    
+                CREATE TABLE login_credentials (
+                    user_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    user_email VARCHAR(50) NULL UNIQUE,
+                    user_password VARCHAR(255) NULL UNIQUE 
+                    );
+                
 
 
-INSERT INTO login_credentials
-	(user_email, user_password)
- VALUES 
-  ('James@gmail.com','Budafdssd'),
-   ('Josephine@gmail.com','D755MARCH'),
-   ('Jakedasnake@gmail.com','boozetrain'),
-   ('letsgetcrackin@gmail.com','123456');
+                INSERT INTO login_credentials
+                    (user_email, user_password)
+                VALUES 
+                ('James@gmail.com','Budafdssd'),
+                ('Josephine@gmail.com','D755MARCH'),
+                ('Jakedasnake@gmail.com','boozetrain'),
+                ('letsgetcrackin@gmail.com','123456');
    
    
 ### ***Blog_info table***
 
 
-CREATE TABLE blog_info (
-    post_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
-    post_title VARCHAR(255) NOT NULL,
-    post_body TEXT NOT NULL,
-    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
-    );
-    
- INSERT INTO blog_info
-	(post_title, post_body)
- VALUES 
-  ('A land of code','Blahblahblahblahblah'),
-   ('stuff for stuff with stuff','this stuff is stuff that stuff has stuff else stuff'),
-   ('Things my kid told me', 'once upon a time I did a thing! What a magnificent thing it was! And MY kid started it all...');
+                CREATE TABLE blog_info (
+                    post_id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
+                    post_title VARCHAR(255) NOT NULL,
+                    post_body TEXT NOT NULL,
+                    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+                    );
+                    
+                INSERT INTO blog_info
+                    (post_title, post_body)
+                VALUES 
+                ('A land of code','Blahblahblahblahblah'),
+                ('stuff for stuff with stuff','this stuff is stuff that stuff has stuff else stuff'),
+                ('Things my kid told me', 'once upon a time I did a thing! What a magnificent thing it was! And MY kid started it all...');
 
 
-   ALTER TABLE `blog_site`.`blog_info` 
-ADD CONSTRAINT `fk_user_id`
-  FOREIGN KEY (`user_id`)
-  REFERENCES `blog_site`.`login_credentials` (`user_id`)
-  ON DELETE CASCADE
-  ON UPDATE NO ACTION;
+                ALTER TABLE `blog_site`.`blog_info` 
+                ADD CONSTRAINT `fk_user_id`
+                FOREIGN KEY (`user_id`)
+                REFERENCES `blog_site`.`login_credentials` (`user_id`)
+                ON DELETE CASCADE
+                ON UPDATE NO ACTION;
 
 
 

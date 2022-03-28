@@ -14,6 +14,8 @@ router.get('/posts/:id', checkJwt, BlogController.getBlogByPostId)
 
 router.post('/blog', checkJwt, BlogController.composeBlogPost)
 
+router.delete('/posts/:id', checkJwt, BlogController.deleteBlogPostById)
+
 
 module.exports = router;
 
