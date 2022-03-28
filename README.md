@@ -20,13 +20,15 @@
 
 -As you can see below we have a table called ***login_credentials*** that contains the ***user_email*** column to register a user by their email,
 ***user_password*** which will conatin a hash encrypted version of the users password, and lastly an ***AUTO_INCREMENTing user_id*** added 
-to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to be able to authenticatte & authorize users*
+to each user as a ***PRIMARY_KEY***. *These Table will be absolutley crucial to be able to authenticatte & authorize users*.
 
--Inside of the ***blog_info*** table we have the blogs ***post_title*** column, the blogs ***post_body***, the time the post was ***created_at***, and once again another 
-***AUTOINCREMENTing*** id called ***post_id*** to give unique identifier to each post as a ***PRIMARY_KEY***.
+-Inside of the ***blog_info*** table we have the blogs ***post_title*** column, the blogs ***post_body***, the time the post was ***created_at***, and once again another ***AUTOINCREMENTing*** id called ***post_id*** to give unique identifier to each post as a ***PRIMARY_KEY***.
+
+-We also have the ***FOREIGN_KEY*** of ***user_id*** on our ***login_credentials*** table that has a relationship with the ***user_id*** on the ***blog_info*** table
+which allows us to differentiate posts between users and allows us to be able to compose a blog post unique to the user who is currently signed in.
 
 
-![Screenshot (20)](https://user-images.githubusercontent.com/90695804/159587222-a76fe0b9-c7f2-468a-97cb-2d861bf2f1b4.png)
+![capstone-ERD](https://user-images.githubusercontent.com/90695804/160251728-f875cb8a-fc78-46f3-8405-6a59939ca89e.png)
 
 
 
@@ -111,6 +113,7 @@ ADD CONSTRAINT `fk_user_id`
   REFERENCES `blog_site`.`login_credentials` (`user_id`)
   ON DELETE CASCADE
   ON UPDATE NO ACTION;
+
 
 
 
