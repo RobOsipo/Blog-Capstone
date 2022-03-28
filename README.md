@@ -5,6 +5,7 @@
 
 ### Where is The data to create the tables?
 * located in ***SQL-seed-data folder***, the ***userCredentialsSeedData.sql*** and ***blogInfoSeedData.sql*** files are needed to create the tables in mySQL workbench
+* Run the *userCredentialsSeedData.sql* schema ***FIRST***, then the *blogInfoSeedData.sql*  ***SECOND***
 * ***IF*** you need to create a database inside your mySql workbench *uncomment line 3 & 4* in the ***userCredentialsSeedData.sql*** file
 * *The data creates the necessary tables and seeds it with only a few sets of dummy data to start*
 
@@ -96,15 +97,20 @@ CREATE TABLE blog_info (
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
     );
     
-
-
-
  INSERT INTO blog_info
 	(post_title, post_body)
  VALUES 
   ('A land of code','Blahblahblahblahblah'),
    ('stuff for stuff with stuff','this stuff is stuff that stuff has stuff else stuff'),
    ('Things my kid told me', 'once upon a time I did a thing! What a magnificent thing it was! And MY kid started it all...');
+
+
+   ALTER TABLE `blog_site`.`blog_info` 
+ADD CONSTRAINT `fk_user_id`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `blog_site`.`login_credentials` (`user_id`)
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
 
 
 

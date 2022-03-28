@@ -17,3 +17,11 @@ CREATE TABLE blog_info (
   ('A land of code','Blahblahblahblahblah'),
    ('stuff for stuff with stuff','this stuff is stuff that stuff has stuff else stuff'),
    ('Things my kid told me', 'once upon a time I did a thing! What a magnificent thing it was! And MY kid started it all...');
+
+
+   ALTER TABLE `blog_site`.`blog_info` 
+ADD CONSTRAINT `fk_user_id`
+  FOREIGN KEY (`user_id`)
+  REFERENCES `blog_site`.`login_credentials` (`user_id`)
+  ON DELETE CASCADE
+  ON UPDATE NO ACTION;
