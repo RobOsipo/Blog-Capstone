@@ -1,6 +1,7 @@
-# **Welcome to Small !** 
-# A blog-site like Medium, except its just a little *smaller*
-## complete CRUD application inspired by the popular medium.com
+# **Welcome to My-Small-Slice !** 
+* notes & reminders
+* search/like/share photos
+* play mini-games
 ©ACA-Capstone
 
 ### Where is The data to create the tables?
