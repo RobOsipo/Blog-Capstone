@@ -31,7 +31,7 @@ const login = async (req, res) => {
     console.log(rows)
         if (err) { return res.status(404).send('A problem occured' + err.sqlMessage)}
 
-        if (!rows[0]) {return res.status(400).send('incorrect credentials')}
+        if (!rows[0]) {return res.status(400).json({error: 'incorrect credentials'})}
         
         else {
 

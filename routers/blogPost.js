@@ -6,7 +6,7 @@ const checkJwt = require('../checkJWT.js');
 
 
 
-router.get('/blog', checkJwt, BlogController.getAllBlogs )
+router.get('/blog', BlogController.getAllBlogs )
 
 router.get('/posts', checkJwt, BlogController.getAllPostTitle)
 
